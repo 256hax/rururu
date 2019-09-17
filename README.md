@@ -21,7 +21,7 @@ My Pet Project. rururu (るるる) is a simple scraping tool.
 
 ## Install
 1. Install Ruby
-2. Download & Unarchive rururu(るるる) zip on GitHub
+2. Download & Unarchive rururu(るるる) zip in GitHub
 3. $ cd rururu
 4. $ bundle install --path vendor/bundle
 5. $ bundle exec ruby app.rb
@@ -31,15 +31,19 @@ My Pet Project. rururu (るるる) is a simple scraping tool.
 ### 1.Form
 #### 1行1URLで入力
 例：Wikipediaの日本とタイ王国のページをスクレイピングする場合
+```
 https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC
 https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E7%8E%8B%E5%9B%BD
+```
 
 ![Scraping Form](https://raw.githubusercontent.com/256hax/rururu/master/docs/screenshot/scraping-form.png)
 
 #### 1行1要素/XPathで入力
 例：首都と人口をXPathで取得する場合
+```
 //*[@id="infoboxCountry"]/dd[5]/table/tbody/tr[2]/td/a
 //*[@id="infoboxCountry"]/dd[5]/table/tbody/tr[4]/td/dl/dd[3]/table/tbody/tr[1]/td/a[1]
+```
 
 ![Result CSV](https://raw.githubusercontent.com/256hax/rururu/master/docs/screenshot/result-csv.png)
 
