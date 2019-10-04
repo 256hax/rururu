@@ -23,9 +23,11 @@ My Pet Project. rururu (るるる) is a simple scraping tool.
 1. Install Ruby
 2. Download & Unarchive rururu(るるる) zip in GitHub
 3. $ cd rururu
-4. $ bundle install --path vendor/bundle
-5. $ bundle exec ruby app.rb
-6. Open http://localhost:4567/ in some browser
+4. $ gem install bundler:2.0.1
+5. $ gem update bundler
+6. $ bundle install --path vendor/bundle
+7. $ bundle exec ruby app.rb
+8. Open http://localhost:4567/ in some browser
 
 ## HowTo Use
 ### 1.Form
