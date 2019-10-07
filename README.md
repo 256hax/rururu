@@ -19,17 +19,23 @@ My Pet Project. rururu (るるる) is a simple scraping tool.
 ### Development
 - App file is only One-File also including images on Sinatra. Sinatraを使って１ファイルのみで開発
 
-## Install
-1. Install Ruby
+## Install & Run
+### Install
+1. Install [Ruby](https://www.ruby-lang.org/ja/downloads/)
 2. Download & Unarchive rururu(るるる) zip in GitHub
-3. $ cd rururu
+3. $ cd [Unarchive rururu folder]
 4. $ gem install bundler:2.0.1
 5. $ gem update bundler
 6. $ bundle install --path vendor/bundle
-7. $ bundle exec ruby app.rb
-8. Open http://localhost:4567/ in some browser
 
-## HowTo Use
+### Run
+1. $ cd [Unarchive rururu folder]
+2. $ bundle exec ruby app.rb
+3. Open http://localhost:4567/ in browser
+4. [Enjoy scraping!]
+5. If you want to stop it, control + C in Terminal
+
+## HowTo Run
 ### 1.Form
 #### 1行1URLで入力
 例：Wikipediaの日本とタイ王国のページをスクレイピングする場合
@@ -46,6 +52,8 @@ https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E7%8E%8B%E5%9B%BD
 //*[@id="infoboxCountry"]/dd[5]/table/tbody/tr[2]/td/a
 //*[@id="infoboxCountry"]/dd[5]/table/tbody/tr[4]/td/dl/dd[3]/table/tbody/tr[1]/td/a[1]
 ```
+
+XPathはChromeの検証ツールでかんたんに取得できます。取得方法は「Chrome XPath」で検索してみてください。
 
 ![Result CSV](https://raw.githubusercontent.com/256hax/rururu/master/docs/screenshot/result-csv.png)
 
