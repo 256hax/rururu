@@ -57,6 +57,11 @@ XPathはChromeの検証ツールでかんたんに取得できます。取得方
 
 ![Result CSV](https://raw.githubusercontent.com/256hax/rururu/master/docs/screenshot/result-csv.png)
 
+または、タグとクラス名で取得する場合、「[タグ名].[クラス名]」として指定できます。
+```
+dt.infoboxCountryNameJa
+```
+
 ### 2.Result
 1. Copy & Paste result(textarea) values to textpad. スクレイピング結果をメモ帳などにコピペ
 2. Save as somename.csv. 適当な名前をつけてCSV形式で保存
