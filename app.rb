@@ -139,6 +139,6 @@ __END__
         <span class="helper-text" data-error="wrong" data-success="right">CSV形式で結果が出力されます</span>
       </div>
     </div>
-    <a class="btn blue-grey lighten-1" href="/">← Back</a>
+    <a class="btn blue-grey lighten-1" href="javascript:history.back();">← Back</a>
     </div>
   </div>
