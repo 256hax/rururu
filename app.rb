@@ -18,9 +18,16 @@ post '/scraping' do
   @csv = CSV.generate(csv_header, headers: true) do |csv|
     urls.each do |url|
       elements.each do |element|
-        page = agent.get(url) # Get page via Mechanize
-        scraped_value = page.search(element).inner_text.strip
-        csv.add_row([url, element, scraped_value])
+        begin
+          page = agent.get(url) # Get page via Mechanize
+          scraped_value = page.search(element).inner_text.strip
+          csv.add_row([url, element, scraped_value])
+        rescue
+          # Something like "Mechanize::ResponseCodeError" error
+          scraped_value = 'ERROR!'
+          csv.add_row([url, element, scraped_value])
+        end
+
         sleep(sleep_time)
       end
     end
@@ -113,8 +120,9 @@ __END__
       </div>
       <div class="section">
         <ul>
+          <li>・ページが見つからない（404 Not Foundなど）場合は、取得結果に「ERROR!」と出力されます。</li>
           <li>・Check policy, robots.txt and legal before scraping. スクレイピング前に対象サイトの利用規約やrobots.txt、違法性がないか（「スクレイピング 違法」などで検索）などのチェックをおすすめします。</li>
-          <li>・攻撃とみなされないように１スクレイピング毎にスリープ時間を入れているため、目安として１URL毎に４０秒ほどかかります。</li>
+          <li>・攻撃とみなされないように１スクレイピング毎にスリープ時間を入れています。目安として１URL毎に４０秒ほどかかります。</li>
         </ul>
       </div>
     </div>
